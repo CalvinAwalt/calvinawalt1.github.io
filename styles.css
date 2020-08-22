@@ -1,4 +1,6 @@
-
+$('.OwnerJoe').each(function() {
+  $(this).before($('<span>').text("Joe's Task: "));
+});
 h2 {
     border-style: dashed;
     border-width: 3px;
