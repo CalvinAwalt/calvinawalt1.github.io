@@ -1,10 +1,6 @@
-$('.OwnerJoe').each(function() {
-  $(this).before($('<span>').text("Joe's Task: "));
-});
-h2 {
-    border-style: dashed;
-    border-width: 3px;
-    border-left-width: 10px;
-    border-right-width: 10px;
-    border-color: red;
+body{
+	background-color:#f4f4f4;
+	color:#555555;
+
+	font-family: Arial, Helvetica, sans-serif;
 }
