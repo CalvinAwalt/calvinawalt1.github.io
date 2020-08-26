@@ -1,21 +1,42 @@
-
 body{
-	font:arial;
-	font-size:5;
-	font color:black;
+	background-color:grey;
+	color:#555555;
+		font:normal 16px Arial, Helvetica,sans-serif;
+
+	line-height:1.6em;
+	margin:0;
+
+
+}
+img {
+  opacity: 3;
 }
 
-
-h1{
-	font:arial;
-	font-size:12;
-	font color:black; 
+img:hover {
+  opacity: 3;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
 }
 
-h2{
-	font:arial;
-	font-size:12;
-	font color:black; 
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111111;
 }
 
 body{
