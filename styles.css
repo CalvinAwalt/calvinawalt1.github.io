@@ -13,7 +13,7 @@ li {
 li a {
   display: block;
   color: white;
-  text-align: justify;
+  text-align: left;
   padding: 16px;
   text-decoration: none;
 }
