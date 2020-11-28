@@ -1,4 +1,4 @@
-
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -12,12 +12,10 @@ li {
 
 li a {
   display: block;
-  color: blue;
+  color: white;
   text-align: left;
   padding: 16px;
   text-decoration: none;
 }
 
 li a:hover {
-  background-color: #111111;
-}
