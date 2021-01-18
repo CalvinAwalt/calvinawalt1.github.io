@@ -1,45 +1,4 @@
-h1 {
-  background-color: white;
-  color: blue;
-}
- <style>
-div {
-  width: 100%;
-  height: 400px;
-  background-image: url('earth.jpg');
-  background-size: cover;
-}
 
-</style> 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: grey;
-  text-align: left;
-  padding: 16px;
-  text-decoration: none;
-}
-
-li a:hover {
- .site-footer
-{
-  background-color:#26272b;
-  padding:45px 0 20px;
-  font-size:15px;
-  line-height:24px;
-  color:#737373;
-}
 /* Please Subscribe My Youtube Channel
 https://www.youtube.com/channel/UCQM5ye1xR4vJgtga0ryud2Q/
 */
