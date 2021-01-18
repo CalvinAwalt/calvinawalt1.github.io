@@ -1,34 +1,43 @@
 
-footer {
-  position: absolute;
-  bottom: 0;
+h1 {
+  background-color: white;
+  color: blue;
+}
+ <style>
+div {
   width: 100%;
-  position: fixed;
-  height: 200px;
-  background-color: #999999;
-}
-footer ul.footerleft{
-    margin-left: 150px;
-    margin-top: 10px;
-}
-footer ul.footerleft li{
-    display: inline;
-    margin-right: 25px;
-}
-footer a{
-    color: #222;
+  height: 400px;
+  background-image: url('earth.jpg');
+  background-size: cover;
 }
 
-footer a:hover{
-    color: #ffffff;
-    text-decoration: none;    
+</style> 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
 }
-.social:hover {
-     -webkit-transform: scale(1.0);
-     -webkit-transition-duration: 0.5s;
- }
- .social {
-     -webkit-transform: scale(0.8);
-     color: #222;
-     
- }
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: grey;
+  text-align: left;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+ .site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}  
