@@ -40,3 +40,9 @@ li a:hover {
   line-height:24px;
   color:#737373;
 }  
+
+  <style>
+  #HCB_comment_box blockquote {
+    color:red;
+  }
+  </style>
