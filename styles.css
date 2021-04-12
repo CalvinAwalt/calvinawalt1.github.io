@@ -1,6 +1,6 @@
 h1 {
   background-color: black;
-  color: white;
+  color: blue;
 }
  <style>
 div {
@@ -25,7 +25,7 @@ li {
 
 li a {
   display: block;
-  color: white;
+  color: grey;
   text-align: left;
   padding: 16px;
   text-decoration: none;
