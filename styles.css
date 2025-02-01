@@ -2,12 +2,12 @@
 body {
   background-color: black;
   color: white;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
-/* Header Styles */
+/* Futuristic Header Styles (Kept as is) */
 h1 {
   background-color: black;
   color: #00bfff; /* Futuristic blue */
@@ -21,37 +21,98 @@ h1 {
   border-bottom: 2px solid #00bfff;
 }
 
- h1 {
-  background-color: black;
-  color: blue;
-}
- <style>
+/* Background Image Section */
 div {
   width: 100%;
   height: 400px;
   background-image: url('earth.jpg');
-  background-size: auto; #switch to cover if needed
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-</style> 
+/* Navigation Styles (Original with Mobile-Friendly Updates) */
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: #333333;
+  display: flex;
+  flex-direction: column; /* Stack items vertically on mobile */
+  align-items: center;
 }
 
 li {
-  float: left;
+  float: none; /* Remove float for mobile */
+  width: 100%; /* Full width for mobile */
+  text-align: center;
 }
 
 li a {
   display: block;
   color: grey;
-  text-align: left;
   padding: 16px;
   text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
 li a:hover {
+  color: #00bfff; /* Futuristic blue on hover */
+  background-color: rgba(0, 191, 255, 0.1); /* Light blue background on hover */
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: grey;
+  padding: 16px;
+}
+
+.menu-icon:hover {
+  color: #00bfff;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Smaller font size for mobile */
+    padding: 15px;
+  }
+
+  div {
+    height: 300px; /* Reduced height for mobile */
+  }
+
+  .menu-icon {
+    display: block; /* Show hamburger icon on mobile */
+  }
+
+  ul {
+    display: none; /* Hide menu by default on mobile */
+    position: absolute;
+    top: 80px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9); /* Darker background for mobile menu */
+  }
+
+  ul.active {
+    display: flex; /* Show menu when active */
+  }
+}
+
+/* Footer Styles */
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: DarkGray;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
