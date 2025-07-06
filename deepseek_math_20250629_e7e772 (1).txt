@@ -1,1 +1,0 @@
-\text{Expression Level} = C_0 e^{kL}, \quad k = \frac{\ln 3}{\ln 2}
