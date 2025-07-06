@@ -1,1 +1,0 @@
-\text{Radiation states} = 3^L \quad \text{(Triadic holography)}  
