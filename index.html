@@ -30,6 +30,7 @@
    <meta name="theme-color" content="#ffffff">
 
    <!-- Styles -->
+   <link rel="stylesheet" href="styles.css">
    <style>
       body {
          background-color: black;
@@ -38,364 +39,312 @@
          margin: 0;
          padding: 0;
       }
-      
-      header {
-         background-image: url('earth.jpg');
-         background-size: cover;
-         padding: 20px;
-      }
-      
-      nav ul {
-         display: flex;
-         justify-content: center;
-         flex-wrap: wrap;
-         list-style: none;
-         padding: 0;
-         margin: 0;
-      }
-      
-      nav li {
-         margin: 0 15px;
-      }
-      
-      nav a {
-         color: white;
-         text-decoration: none;
-         font-weight: bold;
-         transition: color 0.3s;
-      }
-      
-      nav a:hover {
-         color: #00aaff;
-      }
-      
       .tradingview-widget-container {
          margin: 20px auto;
          max-width: 100%;
          overflow: hidden;
       }
-      
-      .widget-grid {
-         display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-         gap: 20px;
-         margin: 20px;
-      }
-      
       footer {
          background-color: rgba(0, 0, 0, 0.5);
          color: DarkGray;
          text-align: center;
-         padding: 20px;
+         padding: 10px;
+         position: relative;
          width: 100%;
-         margin-top: 40px;
       }
-      
       @media (max-width: 768px) {
-         .widget-grid {
-            grid-template-columns: 1fr;
-            margin: 10px;
-         }
-         
-         nav ul {
-            flex-direction: column;
-            align-items: center;
-         }
-         
-         nav li {
-            margin: 5px 0;
-         }
-         
          .tradingview-widget-container {
             margin: 10px auto;
          }
+         footer {
+            position: static;
+         }
       }
    </style>
+
+   <!-- Structured Data -->
+   <script type="application/ld+json">
+   {
+      "@context": "https://schema.org",
+      "@type": "Website",
+      "name": "Futurology Stocks",
+      "url": "https://futurestocks.ca",
+      "description": "Discover the best futuristic stocks to invest in. Explore renewable energy, uranium, cryptocurrency, and space stocks on FutureStocks.ca.",
+      "author": {
+         "@type": "Organization",
+         "name": "FutureStocks.ca"
+      }
+   }
+   </script>
 </head>
 <body>
    <header>
-      <h1 style="text-align: center; margin-bottom: 20px;">Futurology Stocks</h1>
-      <nav>
-         <ul>
-            <li><a href="https://www.wikipedia.org" rel="noopener noreferrer">Wikipedia</a></li>
-            <li><a href="https://www.cnbc.com" rel="noopener noreferrer">CNBC</a></li>
-            <li><a href="https://www.reddit.com/r/Futurology/" rel="noopener noreferrer">Futurology Subreddit</a></li>
-            <li><a href="https://www.futuretimeline.net" rel="noopener noreferrer">Future Timeline</a></li>
-            <li><a href="https://www.macroaxis.com/" rel="noopener noreferrer">Macroaxis</a></li>
-         </ul>
-      </nav>
+      <div style="background-image: url('earth.jpg'); background-size: cover; padding: 20px;">
+         <nav>
+            <ul>
+               <li><a href="https://www.wikipedia.org" rel="noopener noreferrer">Wikipedia</a></li>
+               <li><a href="https://www.cnbc.com" rel="noopener noreferrer">CNBC</a></li>
+               <li><a href="https://www.reddit.com/r/Futurology/" rel="noopener noreferrer">Futurology Subreddit</a></li>
+               <li><a href="https://www.futuretimeline.net" rel="noopener noreferrer">Future Timeline</a></li>
+               <li><a href="https://www.macroaxis.com/" rel="noopener noreferrer">Macroaxis</a></li>
+            </ul>
+         </nav>
+      </div>
    </header>
 
    <main>
-      <!-- Market Overview Section -->
-      <section>
-         <!-- Ticker Tape Widget -->
-         <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <div class="tradingview-widget-copyright">
-               <a href="https://www.tradingview.com" rel="noopener noreferrer" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-            {
-               "symbols": [
-                  {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
-                  {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100"},
-                  {"proName": "FX_IDC:EURUSD", "title": "EUR/USD"},
-                  {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
-                  {"proName": "BITSTAMP:ETHUSD", "title": "ETH/USD"}
-               ],
-               "showSymbolLogo": true,
-               "colorTheme": "dark",
-               "isTransparent": true,
-               "displayMode": "adaptive",
-               "locale": "en"
-            }
-            </script>
+       
+       <!-- Macroaxis Widget Start --><script src="https://www.macroaxis.com/widgets/url.jsp?t=15&s=SRPT, NIO, AA,INDA,NVTS,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG, UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM"></script><div class="macroaxis-copyright"></div><!-- Macroaxis Widget End -->
+      <!-- Ticker Tape Widget -->
+      <div class="tradingview-widget-container">
+         <div class="tradingview-widget-container__widget"></div>
+         <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com" rel="noopener noreferrer" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView
          </div>
-         
-         <!-- Macroaxis Widgets -->
-         <div class="widget-grid">
-            <!-- Macroaxis Widget 1 -->
-            <div class="tradingview-widget-container">
-               <!-- Macroaxis Widget Start --><script src="https://www.macroaxis.com/widgets/url.jsp?t=15&s=UAMY, HSBC, BYDD, HBR, NVTS, MU, MP, TSM"></script><div class="macroaxis-copyright"></div><!-- Macroaxis Widget End -->
-            </div>
-            
-            <!-- Macroaxis Widget 2 -->
-            <div class="tradingview-widget-container">
-               <!-- Macroaxis Widget Start --><script src="https://www.macroaxis.com/widgets/url.jsp?t=15&s=SRPT, NIO, AA,INDA,NVTS,SBET,VALE,ZIM,MVIS,IFOS,BABA,BNRG"></script><div class="macroaxis-copyright"></div><!-- Macroaxis Widget End -->
-            </div>
-         </div>
-      </section>
+         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+         {
+            "symbols": [
+               {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
+               {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100"},
+               {"proName": "FX_IDC:EURUSD", "title": "EUR/USD"},
+               {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
+               {"proName": "BITSTAMP:ETHUSD", "title": "ETH/USD"}
+            ],
+            "showSymbolLogo": true,
+            "colorTheme": "dark",
+            "isTransparent": true,
+            "displayMode": "adaptive",
+            "locale": "en"
+         }
+         </script>
+      </div>
 
-      <!-- All TradingView Widgets -->
-      <div class="widget-grid">
-         <!-- PLTR Chart Widget -->
-         <div class="tradingview-widget-container">
-            <div id="tradingview_0103c"></div>
-            <div class="tradingview-widget-copyright">
-               <a href="https://www.tradingview.com/symbols/NYSE-PLTR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">PLTR Chart</span></a> by TradingView
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-               new TradingView.MediumWidget({
-                  "symbols": [["NASDAQ:GOOG|ALL"], ["NASDAQ:NVDA|ALL"], ["NASDAQ:AMD|ALL"], ["NASDAQ:IRBT|ALL"], ["TSXV:QUIS|ALL"], ["TSXV:MCLD|ALL"], ["TSXV:NXO|ALL"], ["TSXV:SPOT|ALL"], ["AMEX:ARKW|ALL"], ["TSXV:BITF|ALL"]],
-                  "chartOnly": false,
-                  "width": "100%",
-                  "height": "450",
-                  "locale": "en",
-                  "colorTheme": "dark",
-                  "gridLineColor": "rgba(66, 66, 66, 1)",
-                  "trendLineColor": "rgba(0, 0, 255, 1)",
-                  "fontColor": "rgba(255, 0, 255, 1)",
-                  "underLineColor": "rgba(0, 0, 255, 0.15)",
-                  "isTransparent": true,
-                  "autosize": false,
-                  "container_id": "tradingview_0103c"
-               });
-            </script>
+      <!-- PLTR Chart Widget -->
+      <div class="tradingview-widget-container">
+         <div id="tradingview_0103c"></div>
+         <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/symbols/NYSE-PLTR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">PLTR Chart</span></a> by TradingView
          </div>
-
-         <!-- VEOEY Chart Widget -->
-         <div class="tradingview-widget-container">
-            <div id="tradingview_f9866"></div>
-            <div class="tradingview-widget-copyright">
-               <a href="https://www.tradingview.com/symbols/OTC-VEOEY/" rel="noopener noreferrer" target="_blank"><span class="blue-text">VEOEY Chart</span></a> by TradingView
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-               new TradingView.MediumWidget({
-                  "symbols": [["OTC:VEOEY|ALL"], ["NYSE:PNR|ALL"], ["NASDAQ:YORW|ALL"], ["NYSE:CWT|ALL"], ["NYSE:AWR|ALL"], ["NYSE:WTRG|ALL"], ["TSX:GWR|ALL"], ["OTC:RAKR|ALL"]],
-                  "chartOnly": false,
-                  "width": "100%",
-                  "height": "450",
-                  "locale": "en",
-                  "colorTheme": "dark",
-                  "gridLineColor": "rgba(66, 66, 66, 1)",
-                  "trendLineColor": "rgba(0, 0, 255, 1)",
-                  "fontColor": "rgba(255, 0, 255, 1)",
-                  "underLineColor": "rgba(0, 0, 255, 0.15)",
-                  "isTransparent": true,
-                  "autosize": false,
-                  "container_id": "tradingview_f9866"
-               });
-            </script>
-         </div>
-
-         <!-- TRC Chart Widget -->
-         <div class="tradingview-widget-container">
-            <div id="tradingview_670f1"></div>
-            <div class="tradingview-widget-copyright">
-               <a href="https://www.tradingview.com/symbols/NYSE-TRC/" rel="noopener noreferrer" target="_blank"><span class="blue-text">TRC Chart</span></a> by TradingView
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-               new TradingView.MediumWidget({
-                  "symbols": [["NYSE:TRC|ALL"], ["NASDAQ:CRESY|ALL"], ["NASDAQ:PICO|ALL"], ["NASDAQ:LAND|ALL"]],
-                  "chartOnly": false,
-                  "width": "100%",
-                  "height": "450",
-                  "locale": "en",
-                  "colorTheme": "dark",
-                  "gridLineColor": "rgba(66, 66, 66, 1)",
-                  "trendLineColor": "rgba(0, 0, 255, 1)",
-                  "fontColor": "rgba(255, 0, 255, 1)",
-                  "underLineColor": "rgba(0, 0, 255, 0.15)",
-                  "isTransparent": true,
-                  "autosize": false,
-                  "container_id": "tradingview_670f1"
-               });
-            </script>
-         </div>
-
-         <!-- SLV Chart Widget -->
-         <div class="tradingview-widget-container">
-            <div id="tradingview_c77df"></div>
-            <div class="tradingview-widget-copyright">
-               <a href="https://www.tradingview.com/symbols/AMEX-SLV/" rel="noopener noreferrer" target="_blank"><span class="blue-text">SLV Chart</span></a> by TradingView
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-               new TradingView.MediumWidget({
-                  "symbols": [["AMEX:SLV|ALL"], ["NYSE:GOLD|ALL"], ["AMEX:BATT|ALL"], ["TSXV:NOU|ALL"], ["AMEX:JJN|ALL"], ["COPPER|ALL"], ["CBOT:ZCZ2024|ALL"], ["AMEX:URA|ALL"]],
-                  "chartOnly": false,
-                  "width": "100%",
-                  "height": "450",
-                  "locale": "en",
-                  "colorTheme": "dark",
-                  "gridLineColor": "rgba(66, 66, 66, 1)",
-                  "trendLineColor": "rgba(0, 0, 255, 1)",
-                  "fontColor": "rgba(255, 0, 255, 1)",
-                  "underLineColor": "rgba(0, 0, 255, 0.15)",
-                  "isTransparent": true,
-                  "autosize": false,
-                  "container_id": "tradingview_c77df"
-               });
-            </script>
-         </div>
-
-         <!-- TSLA Chart Widget -->
-         <div class="tradingview-widget-container">
-            <div id="tradingview_c825c"></div>
-            <div class="tradingview-widget-copyright">
-               <a href="https://www.tradingview.com/symbols/NASDAQ-TSLA/" rel="noopener noreferrer" target="_blank"><span class="blue-text">TSLA Chart</span></a> by TradingView
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-               new TradingView.MediumWidget({
-                  "symbols": [["NASDAQ:TSLA|ALL"], ["NYSE:NIO|ALL"], ["NASDAQ:SOLO|ALL"], ["NYSE:XPEV|ALL"], ["NASDAQ:LI|ALL"], ["TSXV:GPV|ALL"], ["WKHS|ALL"], ["NASDAQ:PLUG|ALL"]],
-                  "chartOnly": false,
-                  "width": "100%",
-                  "height": "450",
-                  "locale": "en",
-                  "colorTheme": "dark",
-                  "gridLineColor": "rgba(66, 66, 66, 1)",
-                  "trendLineColor": "rgba(0, 0, 255, 1)",
-                  "fontColor": "rgba(255, 0, 255, 1)",
-                  "underLineColor": "rgba(0, 0, 255, 0.15)",
-                  "isTransparent": true,
-                  "autosize": false,
-                  "container_id": "tradingview_c825c"
-               });
-            </script>
-         </div>
-
-         <!-- MAXR Chart Widget -->
-         <div class="tradingview-widget-container">
-            <div id="tradingview_33995"></div>
-            <div class="tradingview-widget-copyright">
-               <a href="https://www.tradingview.com/symbols/NYSE-MAXR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">MAXR Chart</span></a> by TradingView
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-               new TradingView.MediumWidget({
-                  "symbols": [["NYSE:MAXR|ALL"], ["NYSE:SPCE|ALL"], ["NYSE:LMT|ALL"], ["NYSE:BA|ALL"], ["NYSE:NOC|ALL"], ["OTC:INTEQ|ALL"], ["NASDAQ:UFO|ALL"], ["NASDAQ:LORL|ALL"]],
-                  "chartOnly": false,
-                  "width": "100%",
-                  "height": "450",
-                  "locale": "en",
-                  "colorTheme": "dark",
-                  "gridLineColor": "rgba(66, 66, 66, 1)",
-                  "trendLineColor": "rgba(0, 0, 255, 1)",
-                  "fontColor": "rgba(255, 0, 255, 1)",
-                  "underLineColor": "rgba(0, 0, 255, 0.15)",
-                  "isTransparent": true,
-                  "autosize": false,
-                  "container_id": "tradingview_33995"
-               });
-            </script>
-         </div>
-
-         <!-- FSLR Chart Widget -->
-         <div class="tradingview-widget-container">
-            <div id="tradingview_9216c"></div>
-            <div class="tradingview-widget-copyright">
-               <a href="https://www.tradingview.com/symbols/NASDAQ-FSLR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">FSLR Chart</span></a> by TradingView
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-               new TradingView.MediumWidget({
-                  "symbols": [["NASDAQ:FSLR|ALL"], ["NASDAQ:SPWR|ALL"], ["NASDAQ:ENPH|ALL"], ["NASDAQ:SEDG|ALL"], ["TSXV:SOLR|ALL"], ["NASDAQ:CSIQ|ALL"], ["TSXV:NGY|ALL"], ["NASDAQ:ARRY|ALL"]],
-                  "chartOnly": false,
-                  "width": "100%",
-                  "height": "450",
-                  "locale": "en",
-                  "colorTheme": "dark",
-                  "gridLineColor": "rgba(66, 66, 66, 1)",
-                  "trendLineColor": "rgba(0, 0, 255, 1)",
-                  "fontColor": "rgba(255, 0, 255, 1)",
-                  "underLineColor": "rgba(0, 0, 255, 0.15)",
-                  "isTransparent": true,
-                  "autosize": false,
-                  "container_id": "tradingview_9216c"
-               });
-            </script>
-         </div>
-
-         <!-- DAN Chart Widget -->
-         <div class="tradingview-widget-container">
-            <div id="tradingview_faa65"></div>
-            <div class="tradingview-widget-copyright">
-               <a href="https://www.tradingview.com/symbols/TSXV-DAN/" rel="noopener noreferrer" target="_blank"><span class="blue-text">DAN Chart</span></a> by TradingView
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-               new TradingView.MediumWidget({
-                  "symbols": [["TSXV:DAN|ALL"], ["ASX:AEV|ALL"], ["TSXV:GRO|ALL"], ["TSXV:IFOS|ALL"], ["NYSE:MOS|ALL"], ["NYSE:NTR|ALL"]],
-                  "chartOnly": false,
-                  "width": "100%",
-                  "height": "450",
-                  "locale": "en",
-                  "colorTheme": "dark",
-                  "gridLineColor": "rgba(66, 66, 66, 1)",
-                  "trendLineColor": "rgba(0, 0, 255, 1)",
-                  "fontColor": "rgba(255, 0, 255, 1)",
-                  "underLineColor": "rgba(0, 0, 255, 0.15)",
-                  "isTransparent": true,
-                  "autosize": false,
-                  "container_id": "tradingview_faa65"
-               });
-            </script>
-         </div>
-
-         <!-- Cryptocurrency Markets Widget -->
-         <div class="tradingview-widget-container">
-            <div class="tradingview-widget-container__widget"></div>
-            <div class="tradingview-widget-copyright">
-               <a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener noreferrer" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> by TradingView
-            </div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-            {
+         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+         <script type="text/javascript">
+            new TradingView.MediumWidget({
+               "symbols": [["NASDAQ:GOOG|ALL"], ["NASDAQ:NVDA|ALL"], ["NASDAQ:AMD|ALL"], ["NASDAQ:IRBT|ALL"], ["TSXV:QUIS|ALL"], ["TSXV:MCLD|ALL"], ["TSXV:NXO|ALL"], ["TSXV:SPOT|ALL"], ["AMEX:ARKW|ALL"], ["TSXV:BITF|ALL"]],
+               "chartOnly": false,
                "width": "100%",
                "height": "450",
-               "defaultColumn": "overview",
-               "screener_type": "crypto_mkt",
-               "displayCurrency": "USD",
-               "colorTheme": "dark",
                "locale": "en",
-               "isTransparent": true
-            }
-            </script>
+               "colorTheme": "dark",
+               "gridLineColor": "rgba(66, 66, 66, 1)",
+               "trendLineColor": "rgba(0, 0, 255, 1)",
+               "fontColor": "rgba(255, 0, 255, 1)",
+               "underLineColor": "rgba(0, 0, 255, 0.15)",
+               "isTransparent": true,
+               "autosize": false,
+               "container_id": "tradingview_0103c"
+            });
+         </script>
+      </div>
+
+      <!-- VEOEY Chart Widget -->
+      <div class="tradingview-widget-container">
+         <div id="tradingview_f9866"></div>
+         <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/symbols/OTC-VEOEY/" rel="noopener noreferrer" target="_blank"><span class="blue-text">VEOEY Chart</span></a> by TradingView
          </div>
+         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+         <script type="text/javascript">
+            new TradingView.MediumWidget({
+               "symbols": [["OTC:VEOEY|ALL"], ["NYSE:PNR|ALL"], ["NASDAQ:YORW|ALL"], ["NYSE:CWT|ALL"], ["NYSE:AWR|ALL"], ["NYSE:WTRG|ALL"], ["TSX:GWR|ALL"], ["OTC:RAKR|ALL"]],
+               "chartOnly": false,
+               "width": "100%",
+               "height": "450",
+               "locale": "en",
+               "colorTheme": "dark",
+               "gridLineColor": "rgba(66, 66, 66, 1)",
+               "trendLineColor": "rgba(0, 0, 255, 1)",
+               "fontColor": "rgba(255, 0, 255, 1)",
+               "underLineColor": "rgba(0, 0, 255, 0.15)",
+               "isTransparent": true,
+               "autosize": false,
+               "container_id": "tradingview_f9866"
+            });
+         </script>
+      </div>
+
+      <!-- TRC Chart Widget -->
+      <div class="tradingview-widget-container">
+         <div id="tradingview_670f1"></div>
+         <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/symbols/NYSE-TRC/" rel="noopener noreferrer" target="_blank"><span class="blue-text">TRC Chart</span></a> by TradingView
+         </div>
+         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+         <script type="text/javascript">
+            new TradingView.MediumWidget({
+               "symbols": [["NYSE:TRC|ALL"], ["NASDAQ:CRESY|ALL"], ["NASDAQ:PICO|ALL"], ["NASDAQ:LAND|ALL"]],
+               "chartOnly": false,
+               "width": "100%",
+               "height": "450",
+               "locale": "en",
+               "colorTheme": "dark",
+               "gridLineColor": "rgba(66, 66, 66, 1)",
+               "trendLineColor": "rgba(0, 0, 255, 1)",
+               "fontColor": "rgba(255, 0, 255, 1)",
+               "underLineColor": "rgba(0, 0, 255, 0.15)",
+               "isTransparent": true,
+               "autosize": false,
+               "container_id": "tradingview_670f1"
+            });
+         </script>
+      </div>
+
+      <!-- SLV Chart Widget -->
+      <div class="tradingview-widget-container">
+         <div id="tradingview_c77df"></div>
+         <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/symbols/AMEX-SLV/" rel="noopener noreferrer" target="_blank"><span class="blue-text">SLV Chart</span></a> by TradingView
+         </div>
+         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+         <script type="text/javascript">
+            new TradingView.MediumWidget({
+               "symbols": [["AMEX:SLV|ALL"], ["NYSE:GOLD|ALL"], ["AMEX:BATT|ALL"], ["TSXV:NOU|ALL"], ["AMEX:JJN|ALL"], ["COPPER|ALL"], ["CBOT:ZCZ2024|ALL"], ["AMEX:URA|ALL"]],
+               "chartOnly": false,
+               "width": "100%",
+               "height": "450",
+               "locale": "en",
+               "colorTheme": "dark",
+               "gridLineColor": "rgba(66, 66, 66, 1)",
+               "trendLineColor": "rgba(0, 0, 255, 1)",
+               "fontColor": "rgba(255, 0, 255, 1)",
+               "underLineColor": "rgba(0, 0, 255, 0.15)",
+               "isTransparent": true,
+               "autosize": false,
+               "container_id": "tradingview_c77df"
+            });
+         </script>
+      </div>
+
+      <!-- TSLA Chart Widget -->
+      <div class="tradingview-widget-container">
+         <div id="tradingview_c825c"></div>
+         <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/symbols/NASDAQ-TSLA/" rel="noopener noreferrer" target="_blank"><span class="blue-text">TSLA Chart</span></a> by TradingView
+         </div>
+         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+         <script type="text/javascript">
+            new TradingView.MediumWidget({
+               "symbols": [["NASDAQ:TSLA|ALL"], ["NYSE:NIO|ALL"], ["NASDAQ:SOLO|ALL"], ["NYSE:XPEV|ALL"], ["NASDAQ:LI|ALL"], ["TSXV:GPV|ALL"], ["WKHS|ALL"], ["NASDAQ:PLUG|ALL"]],
+               "chartOnly": false,
+               "width": "100%",
+               "height": "450",
+               "locale": "en",
+               "colorTheme": "dark",
+               "gridLineColor": "rgba(66, 66, 66, 1)",
+               "trendLineColor": "rgba(0, 0, 255, 1)",
+               "fontColor": "rgba(255, 0, 255, 1)",
+               "underLineColor": "rgba(0, 0, 255, 0.15)",
+               "isTransparent": true,
+               "autosize": false,
+               "container_id": "tradingview_c825c"
+            });
+         </script>
+      </div>
+
+      <!-- MAXR Chart Widget -->
+      <div class="tradingview-widget-container">
+         <div id="tradingview_33995"></div>
+         <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/symbols/NYSE-MAXR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">MAXR Chart</span></a> by TradingView
+         </div>
+         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+         <script type="text/javascript">
+            new TradingView.MediumWidget({
+               "symbols": [["NYSE:MAXR|ALL"], ["NYSE:SPCE|ALL"], ["NYSE:LMT|ALL"], ["NYSE:BA|ALL"], ["NYSE:NOC|ALL"], ["OTC:INTEQ|ALL"], ["NASDAQ:UFO|ALL"], ["NASDAQ:LORL|ALL"]],
+               "chartOnly": false,
+               "width": "100%",
+               "height": "450",
+               "locale": "en",
+               "colorTheme": "dark",
+               "gridLineColor": "rgba(66, 66, 66, 1)",
+               "trendLineColor": "rgba(0, 0, 255, 1)",
+               "fontColor": "rgba(255, 0, 255, 1)",
+               "underLineColor": "rgba(0, 0, 255, 0.15)",
+               "isTransparent": true,
+               "autosize": false,
+               "container_id": "tradingview_33995"
+            });
+         </script>
+      </div>
+
+      <!-- FSLR Chart Widget -->
+      <div class="tradingview-widget-container">
+         <div id="tradingview_9216c"></div>
+         <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/symbols/NASDAQ-FSLR/" rel="noopener noreferrer" target="_blank"><span class="blue-text">FSLR Chart</span></a> by TradingView
+         </div>
+         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+         <script type="text/javascript">
+            new TradingView.MediumWidget({
+               "symbols": [["NASDAQ:FSLR|ALL"], ["NASDAQ:SPWR|ALL"], ["NASDAQ:ENPH|ALL"], ["NASDAQ:SEDG|ALL"], ["TSXV:SOLR|ALL"], ["NASDAQ:CSIQ|ALL"], ["TSXV:NGY|ALL"], ["NASDAQ:ARRY|ALL"]],
+               "chartOnly": false,
+               "width": "100%",
+               "height": "450",
+               "locale": "en",
+               "colorTheme": "dark",
+               "gridLineColor": "rgba(66, 66, 66, 1)",
+               "trendLineColor": "rgba(0, 0, 255, 1)",
+               "fontColor": "rgba(255, 0, 255, 1)",
+               "underLineColor": "rgba(0, 0, 255, 0.15)",
+               "isTransparent": true,
+               "autosize": false,
+               "container_id": "tradingview_9216c"
+            });
+         </script>
+      </div>
+
+      <!-- DAN Chart Widget -->
+      <div class="tradingview-widget-container">
+         <div id="tradingview_faa65"></div>
+         <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/symbols/TSXV-DAN/" rel="noopener noreferrer" target="_blank"><span class="blue-text">DAN Chart</span></a> by TradingView
+         </div>
+         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+         <script type="text/javascript">
+            new TradingView.MediumWidget({
+               "symbols": [["TSXV:DAN|ALL"], ["ASX:AEV|ALL"], ["TSXV:GRO|ALL"], ["TSXV:IFOS|ALL"], ["NYSE:MOS|ALL"], ["NYSE:NTR|ALL"]],
+               "chartOnly": false,
+               "width": "100%",
+               "height": "450",
+               "locale": "en",
+               "colorTheme": "dark",
+               "gridLineColor": "rgba(66, 66, 66, 1)",
+               "trendLineColor": "rgba(0, 0, 255, 1)",
+               "fontColor": "rgba(255, 0, 255, 1)",
+               "underLineColor": "rgba(0, 0, 255, 0.15)",
+               "isTransparent": true,
+               "autosize": false,
+               "container_id": "tradingview_faa65"
+            });
+         </script>
+      </div>
+
+      <!-- Cryptocurrency Markets Widget -->
+      <div class="tradingview-widget-container">
+         <div class="tradingview-widget-container__widget"></div>
+         <div class="tradingview-widget-copyright">
+            <a href="https://www.tradingview.com/markets/cryptocurrencies/prices-all/" rel="noopener noreferrer" target="_blank"><span class="blue-text">Cryptocurrency Markets</span></a> by TradingView
+         </div>
+         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+         {
+            "width": "100%",
+            "height": "450",
+            "defaultColumn": "overview",
+            "screener_type": "crypto_mkt",
+            "displayCurrency": "USD",
+            "colorTheme": "dark",
+            "locale": "en",
+            "isTransparent": true
+         }
+         </script>
       </div>
    </main>
 
@@ -404,5 +353,7 @@
       <p>Copyright &copy; 2025 Futurology Stocks</p>
       <p>Financial Content By Macroaxis</p>
    </footer>
+
+  
 </body>
 </html>
