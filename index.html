@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>translucent · blue</title>
+  <title>glass aquarium · swimming fish</title>
   <style>
-    /* global reset: no margin, no padding, full viewport */
+    /* ---------- global reset ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -15,43 +15,263 @@
     html, body {
       width: 100%;
       min-height: 100vh;
-      background: transparent; /* base is transparent, we'll layer */
+      overflow: hidden; /* prevent scrollbars from fish moving off-screen */
     }
 
     body {
       /* 
-        the "actual translucent background" is achieved with a semi‑transparent 
-        blue layer that lets underlying content (or the browser's default white) 
-        show through. 
-        - we use rgba() for true translucency (alpha channel)
-        - no words, no extra elements – just the body itself
+        ultra‑translucent blue – like clear glass with a faint cobalt tint.
+        alpha = 0.12  →  only a whisper of blue, very transparent.
+        the white background of the browser shines through, giving 
+        a crisp, airy, glass‑like feel.
       */
-      background-color: rgba(30, 80, 210, 0.45); /* vivid blue, 45% opacity */
-      
-      /* 
-        to make the translucency more visible, we add a subtle gradient or 
-        a background pattern? no – the requirement says "just a blue translucent 
-        background". so we keep it pure. 
-        but we want to ensure the translucency is *actual* – if there's no 
-        content behind, the browser's default white page will show through. 
-        that gives a soft blue veil over white – perfect.
-      */
-      
-      /* optional: to enhance the "translucent" feeling, we can add a tiny 
-         backdrop effect – but this would be an extra layer. we stick to 
-         the simplest: just a translucent blue background. */
-      
-      /* ensure there are no pseudo-elements or text */
+      background-color: rgba(40, 90, 220, 0.12);
+
+      /* position context for the fish */
+      position: relative;
+    }
+
+    /* ---- fish container: covers the whole viewport ---- */
+    #aquarium {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none; /* so you can click "through" if needed */
+      z-index: 1;
+    }
+
+    /* ---- each fish is a simple SVG shape ---- */
+    .fish {
+      position: absolute;
+      width: 60px;
+      height: 30px;
+      will-change: transform;
+      animation: swim linear infinite;
+      /* each fish will have its own duration & delay via inline style */
+    }
+
+    /* fish body (SVG) – we use inline SVG for crisp rendering */
+    .fish svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
     }
 
     /* 
-      we don't add any div, paragraph, or heading.
-      no text nodes at all. 
-      the only content is the translucent blue background.
+      swimming animation: moves fish from right to left across the screen,
+      with a gentle vertical bob to mimic real swimming.
     */
+    @keyframes swim {
+      0% {
+        transform: translateX(110vw) translateY(0) scaleX(1);
+        opacity: 0.7;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-20vw) translateY(40px) scaleX(1);
+        opacity: 0.5;
+      }
+    }
+
+    /* some fish swim the other way – we add a class for that */
+    .fish.flip {
+      animation-name: swim-reverse;
+    }
+
+    @keyframes swim-reverse {
+      0% {
+        transform: translateX(-20vw) translateY(0) scaleX(-1);
+        opacity: 0.7;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(110vw) translateY(30px) scaleX(-1);
+        opacity: 0.5;
+      }
+    }
+
+    /* small fish variation */
+    .fish.small {
+      width: 36px;
+      height: 18px;
+    }
+    .fish.tiny {
+      width: 24px;
+      height: 12px;
+    }
+    .fish.large {
+      width: 80px;
+      height: 40px;
+    }
+
+    /* subtle bubble effect – optional, but adds to the aquarium feel */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: inset 0 0 6px rgba(255,255,255,0.3);
+      animation: floatUp linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) scale(0.6);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.6;
+      }
+      80% {
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- absolutely no text, no elements, no comments that render -->
+  <!-- the aquarium layer – holds all fish and bubbles -->
+  <div id="aquarium"></div>
+
+  <script>
+    (function() {
+      const aquarium = document.getElementById('aquarium');
+
+      // ----- helper: random float between min & max -----
+      const rand = (min, max) => Math.random() * (max - min) + min;
+
+      // ----- generate a fish SVG string with a specific color -----
+      function createFishSVG(color, tailColor) {
+        // color = main body, tailColor = tail fin (slightly different)
+        return `
+          <svg viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+            <!-- tail fin -->
+            <polygon points="0,15 12,4 12,26" fill="${tailColor}" opacity="0.9"/>
+            <!-- body (elliptical) -->
+            <ellipse cx="30" cy="15" rx="24" ry="12" fill="${color}" />
+            <!-- eye -->
+            <circle cx="40" cy="12" r="3" fill="white" />
+            <circle cx="41" cy="11.5" r="1.5" fill="#1a2a3a" />
+            <!-- dorsal fin -->
+            <polygon points="26,3 34,3 32,10 28,10" fill="${tailColor}" opacity="0.7"/>
+            <!-- pectoral fin -->
+            <polygon points="32,22 38,26 34,26" fill="${tailColor}" opacity="0.6"/>
+          </svg>
+        `;
+      }
+
+      // ----- color palette for fish (translucent, glassy tones) -----
+      const colors = [
+        { body: 'rgba(255, 120, 80, 0.7)', tail: 'rgba(220, 80, 40, 0.8)' },    // orange
+        { body: 'rgba(255, 200, 60, 0.7)', tail: 'rgba(220, 160, 30, 0.8)' },  // golden
+        { body: 'rgba(60, 180, 220, 0.7)', tail: 'rgba(30, 130, 180, 0.8)' },  // blue
+        { body: 'rgba(220, 80, 160, 0.7)', tail: 'rgba(180, 50, 120, 0.8)' },  // pink
+        { body: 'rgba(100, 220, 140, 0.7)', tail: 'rgba(60, 180, 100, 0.8)' }, // mint
+        { body: 'rgba(200, 130, 240, 0.7)', tail: 'rgba(150, 80, 200, 0.8)' }, // lavender
+      ];
+
+      // ----- create a fish element with random properties -----
+      function createFish() {
+        const fish = document.createElement('div');
+        fish.className = 'fish';
+
+        // random size class
+        const sizeRand = Math.random();
+        if (sizeRand < 0.3) fish.classList.add('small');
+        else if (sizeRand < 0.6) fish.classList.add('tiny');
+        else if (sizeRand > 0.9) fish.classList.add('large');
+        // else default medium (60x30)
+
+        // random color
+        const colorPair = colors[Math.floor(Math.random() * colors.length)];
+        const svgString = createFishSVG(colorPair.body, colorPair.tail);
+        fish.innerHTML = svgString;
+
+        // random vertical position (y) – 10% to 90% of viewport
+        const yPos = rand(5, 90);
+        fish.style.top = yPos + '%';
+
+        // random animation duration (between 8 and 22 seconds)
+        const duration = rand(10, 24);
+        fish.style.animationDuration = duration + 's';
+
+        // random delay (0 to 12s) to spread them out
+        const delay = rand(0, 14);
+        fish.style.animationDelay = delay + 's';
+
+        // 40% chance to swim right-to-left (flip class)
+        if (Math.random() < 0.4) {
+          fish.classList.add('flip');
+        }
+
+        // random horizontal starting offset (so they don't all start at the same edge)
+        // we set a random translateX via inline style – but the animation will override.
+        // instead we add a small variation using a custom property or just rely on delay.
+        // we can also add a slight vertical offset variation by using a custom animation
+        // but we keep it simple.
+
+        // store a reference to the fish for potential later use
+        return fish;
+      }
+
+      // ----- create bubbles (tiny glass spheres) -----
+      function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        const size = rand(4, 14);
+        bubble.style.width = size + 'px';
+        bubble.style.height = size + 'px';
+        bubble.style.left = rand(0, 95) + '%';
+        bubble.style.animationDuration = rand(12, 28) + 's';
+        bubble.style.animationDelay = rand(0, 20) + 's';
+        bubble.style.opacity = rand(0.1, 0.35);
+        return bubble;
+      }
+
+      // ----- populate the aquarium -----
+      const fishCount = 14;        // enough to look lively but not crowded
+      const bubbleCount = 22;
+
+      for (let i = 0; i < fishCount; i++) {
+        aquarium.appendChild(createFish());
+      }
+
+      for (let i = 0; i < bubbleCount; i++) {
+        aquarium.appendChild(createBubble());
+      }
+
+      // (optional) add a few extra fish after a short delay to make it dynamic
+      setTimeout(() => {
+        for (let i = 0; i < 4; i++) {
+          const f = createFish();
+          // give them a shorter animation to appear "new"
+          f.style.animationDuration = rand(8, 16) + 's';
+          f.style.animationDelay = '0s';
+          aquarium.appendChild(f);
+        }
+      }, 3000);
+
+      // ----- small trick: on resize, we don't need to do anything,
+      // since fish use % and vw/vh – they adapt automatically.
+    })();
+  </script>
+
+  <!-- no text, no extra content – just the glassy aquarium with fish -->
 </body>
 </html>
