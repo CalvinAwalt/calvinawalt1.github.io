@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>translucent · blue</title>
+  <style>
+    /* global reset: no margin, no padding, full viewport */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background: transparent; /* base is transparent, we'll layer */
+    }
+
+    body {
+      /* 
+        the "actual translucent background" is achieved with a semi‑transparent 
+        blue layer that lets underlying content (or the browser's default white) 
+        show through. 
+        - we use rgba() for true translucency (alpha channel)
+        - no words, no extra elements – just the body itself
+      */
+      background-color: rgba(30, 80, 210, 0.45); /* vivid blue, 45% opacity */
+      
+      /* 
+        to make the translucency more visible, we add a subtle gradient or 
+        a background pattern? no – the requirement says "just a blue translucent 
+        background". so we keep it pure. 
+        but we want to ensure the translucency is *actual* – if there's no 
+        content behind, the browser's default white page will show through. 
+        that gives a soft blue veil over white – perfect.
+      */
+      
+      /* optional: to enhance the "translucent" feeling, we can add a tiny 
+         backdrop effect – but this would be an extra layer. we stick to 
+         the simplest: just a translucent blue background. */
+      
+      /* ensure there are no pseudo-elements or text */
+    }
+
+    /* 
+      we don't add any div, paragraph, or heading.
+      no text nodes at all. 
+      the only content is the translucent blue background.
+    */
+  </style>
+</head>
+<body>
+  <!-- absolutely no text, no elements, no comments that render -->
+</body>
+</html>
